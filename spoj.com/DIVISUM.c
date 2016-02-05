@@ -3,10 +3,10 @@ int main()
 {
 
     int t,i,k,s=0,a;
-    scanf("\n%d",&t);
+    scanf("%d",&t);
     for(i=1;i<=t;i++)
     {
-        scanf("\n%d",&a);
+        scanf("%d",&a);
         for(k=1;k<a;k++)
             {
                 if(a%k==0)
