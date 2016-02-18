@@ -1,29 +1,28 @@
 #include<stdio.h>
-void series (int n)
+void series(int n)
 {
-    int j,c,t;
-  for(j=1;j<=n;j++)
-    {
-        if(n%j==0)
-        c++;
-    }
-    if(c==2)
-        t=n;
-    else
-        t=2;
     int a[n+1];
-    int i;
     a[0]=0;
     a[1]=0;
-    //a[2]=2;
-    printf("t=%d ",t);
+    int i,j,c=0,t=0;
     for(i=2;i<=n;i++)
-      {
+    {
+        for(j=1;j<=i;j++)
+         {
+            if(i%j==0)
+            c++;
+         }
+        if(c==2)
+            t=i;
+        else
+            t=2;
+
         a[i]=a[i-1]+t;
         t=0;
-      }
-    printf("\n%d",a[n]);
+        c=0;
 
+    }
+     printf("%d",a[n]);
 }
 int main()
 {
@@ -31,9 +30,10 @@ int main()
    scanf("\n%d",&t);
    for(i=1;i<=t;i++)
    {
-       scanf("\n%d",&num);
+       scanf("%d",&num);
     series(num);
        getch();
 
 
-}}
+    }
+}
